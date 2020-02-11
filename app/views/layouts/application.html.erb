@@ -5,11 +5,22 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <h1 style="color: red; margin: 16px 32px 0 32px">Bootleg Yelp</h1>
+    <nav style="border-bottom: 2px solid red; padding: 0 32px">
+      <%= link_to "Home", restaurants_path, style: 'margin 16px', class: 'btn btn-danger' %>
+      <%= link_to "Create a restaurant", new_restaurant_path, style: 'margin: 16px', class: 'btn btn-danger' %>
+    </nav>
+    <div class="col-6 offset-3">
+      <%= yield %>
+    </div>
   </body>
 </html>
